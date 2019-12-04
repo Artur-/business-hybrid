@@ -66,7 +66,6 @@ public class MainLayout extends FlexBoxLayout
 	private Div appFooterOuter;
 
 	private TabBar tabBar;
-	private boolean navigationTabs = false;
 	private AppBar appBar;
 
 	public MainLayout() {
@@ -147,26 +146,8 @@ public class MainLayout extends FlexBoxLayout
 		appBar = new AppBar("");
 
 		// Tabbed navigation
-		if (navigationTabs) {
-			tabBar = new TabBar();
-			UIUtils.setTheme(Lumo.DARK, tabBar);
-
-			// Shift-click to add a new tab
-			for (NaviItem item : naviDrawer.getMenu().getNaviItems()) {
-				item.addClickListener(e -> {
-					if (e.getButton() == 0 && e.isShiftKey()) {
-						tabBar.setSelectedTab(tabBar.addClosableTab(item.getText(), item.getNavigationTarget()));
-					}
-				});
-			}
-			appBar.getAvatar().setVisible(false);
-			setAppHeaderInner(tabBar, appBar);
-
-			// Default navigation
-		} else {
 			UIUtils.setTheme(Lumo.DARK, appBar);
 			setAppHeaderInner(appBar);
-		}
 	}
 
 	private void setAppHeaderOuter(Component... components) {
@@ -241,29 +222,7 @@ public class MainLayout extends FlexBoxLayout
 
 	@Override
 	public void afterNavigation(AfterNavigationEvent event) {
-		if (navigationTabs) {
-			afterNavigationWithTabs(event);
-		} else {
-			afterNavigationWithoutTabs(event);
-		}
-	}
-
-	private void afterNavigationWithTabs(AfterNavigationEvent e) {
-		NaviItem active = getActiveItem(e);
-		if (active == null) {
-			if (tabBar.getTabCount() == 0) {
-				tabBar.addClosableTab("", Home.class);
-			}
-		} else {
-			if (tabBar.getTabCount() > 0) {
-				tabBar.updateSelectedTab(active.getText(),
-						active.getNavigationTarget());
-			} else {
-				tabBar.addClosableTab(active.getText(),
-						active.getNavigationTarget());
-			}
-		}
-		appBar.getMenuIcon().setVisible(false);
+		afterNavigationWithoutTabs(event);
 	}
 
 	private NaviItem getActiveItem(AfterNavigationEvent e) {
