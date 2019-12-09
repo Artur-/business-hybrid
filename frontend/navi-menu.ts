@@ -1,7 +1,8 @@
 import { css, customElement, html, LitElement, property } from "lit-element";
-import { CSSModule } from "./css-utils";
 import { globalCss } from "./global-styles";
 import "./navi-item";
+import "@vaadin/vaadin-icons";
+import "@vaadin/vaadin-button"
 
 export interface MenuItem {
   path?: string;
@@ -38,7 +39,7 @@ export class NaviMenu extends LitElement {
     {
       icon: "vaadin:users",
       text: "Personnel",
-      expanded: false,
+      expanded: true,
       children: [
         {
           path: "accountants",
@@ -54,7 +55,6 @@ export class NaviMenu extends LitElement {
   static get styles() {
     return [
       globalCss,
-      CSSModule("lumo-typography"),
       css`
         .navi-menu {
           margin-bottom: var(--lumo-space-s);

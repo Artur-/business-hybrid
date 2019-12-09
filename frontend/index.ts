@@ -2,6 +2,7 @@ import { Flow } from "@vaadin/flow-frontend/Flow";
 import { Router } from "@vaadin/router";
 import "./global-component-styles";
 import { registerGlobalStyles } from "./global-styles";
+import "./main-layout";
 
 registerGlobalStyles();
 const { serverSideRoutes } = new Flow({
@@ -9,8 +10,12 @@ const { serverSideRoutes } = new Flow({
 });
 
 const routes = [
+  {
+    path: "",
+    component: "main-layout",
+    children: [...serverSideRoutes]
+  }
   // fallback to server-side Flow routes if no client-side routes match
-  ...serverSideRoutes
 ];
 
 const router = new Router(document.body);

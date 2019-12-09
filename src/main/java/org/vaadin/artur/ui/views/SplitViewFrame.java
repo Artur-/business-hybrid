@@ -6,7 +6,7 @@ import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
-import org.vaadin.artur.ui.MainLayout;
+
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.util.css.FlexDirection;
 

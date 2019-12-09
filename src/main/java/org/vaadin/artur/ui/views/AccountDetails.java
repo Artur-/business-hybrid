@@ -1,5 +1,7 @@
 package org.vaadin.artur.ui.views;
 
+import java.time.LocalDate;
+
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
@@ -18,12 +20,11 @@ import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+
 import org.vaadin.artur.backend.BankAccount;
 import org.vaadin.artur.backend.DummyData;
-import org.vaadin.artur.ui.MainLayout;
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.components.ListItem;
-import org.vaadin.artur.ui.components.navigation.bar.AppBar;
 import org.vaadin.artur.ui.layout.size.Bottom;
 import org.vaadin.artur.ui.layout.size.Horizontal;
 import org.vaadin.artur.ui.layout.size.Top;
@@ -37,10 +38,8 @@ import org.vaadin.artur.ui.util.css.FlexDirection;
 import org.vaadin.artur.ui.util.css.FlexWrap;
 import org.vaadin.artur.ui.util.css.WhiteSpace;
 
-import java.time.LocalDate;
-
 @PageTitle("Account Details")
-@Route(value = "account-details", layout = MainLayout.class)
+@Route(value = "account-details")
 public class AccountDetails extends ViewFrame implements HasUrlParameter<Long> {
 
 	public int RECENT_TRANSACTIONS = 4;

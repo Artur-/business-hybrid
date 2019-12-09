@@ -1,11 +1,11 @@
-import { LitElement, customElement, html, css } from "lit-element";
-import { CSSModule } from "./css-utils";
+import { css, customElement, html, LitElement } from "lit-element";
+import { globalCss } from "./global-styles";
 
 @customElement("app-bar")
 export class AppBar extends LitElement {
   static get styles() {
     return [
-      CSSModule("lumo-color"),
+      globalCss,
       css`
         .app-bar {
           background-color: var(--lumo-base-color);

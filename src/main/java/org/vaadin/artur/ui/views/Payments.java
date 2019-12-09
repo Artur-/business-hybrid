@@ -17,15 +17,14 @@ import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.renderer.TemplateRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+
 import org.vaadin.artur.backend.DummyData;
 import org.vaadin.artur.backend.Payment;
-import org.vaadin.artur.ui.MainLayout;
 import org.vaadin.artur.ui.components.Badge;
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.components.ListItem;
 import org.vaadin.artur.ui.components.detailsdrawer.DetailsDrawer;
 import org.vaadin.artur.ui.components.detailsdrawer.DetailsDrawerHeader;
-import org.vaadin.artur.ui.components.navigation.bar.AppBar;
 import org.vaadin.artur.ui.layout.size.Bottom;
 import org.vaadin.artur.ui.layout.size.Horizontal;
 import org.vaadin.artur.ui.layout.size.Top;
@@ -38,7 +37,7 @@ import org.vaadin.artur.ui.util.css.BoxSizing;
 import org.vaadin.artur.ui.util.css.WhiteSpace;
 
 @PageTitle("Payments")
-@Route(value = "payments", layout = MainLayout.class)
+@Route(value = "payments")
 public class Payments extends SplitViewFrame {
 
 	private Grid<Payment> grid;

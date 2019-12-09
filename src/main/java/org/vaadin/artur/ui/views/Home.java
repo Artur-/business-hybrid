@@ -6,7 +6,7 @@ import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.vaadin.artur.ui.MainLayout;
+
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.layout.size.Horizontal;
 import org.vaadin.artur.ui.layout.size.Right;
@@ -16,7 +16,7 @@ import org.vaadin.artur.ui.util.css.FlexDirection;
 import org.vaadin.artur.ui.util.css.FlexWrap;
 
 @PageTitle("Welcome")
-@Route(value = "", layout = MainLayout.class)
+@Route(value = "")
 public class Home extends ViewFrame {
 
 	public Home() {

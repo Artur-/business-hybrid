@@ -17,9 +17,9 @@ import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+
 import org.vaadin.artur.backend.DummyData;
 import org.vaadin.artur.backend.Person;
-import org.vaadin.artur.ui.MainLayout;
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.components.Initials;
 import org.vaadin.artur.ui.components.ListItem;
@@ -35,7 +35,7 @@ import org.vaadin.artur.ui.util.UIUtils;
 import org.vaadin.artur.ui.util.css.BoxSizing;
 import org.vaadin.artur.ui.views.SplitViewFrame;
 
-@Route(value = "managers", layout = MainLayout.class)
+@Route(value = "managers")
 @PageTitle("Managers")
 public class Managers extends SplitViewFrame {
 

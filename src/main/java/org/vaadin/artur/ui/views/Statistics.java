@@ -4,7 +4,15 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.board.Row;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.charts.Chart;
-import com.vaadin.flow.component.charts.model.*;
+import com.vaadin.flow.component.charts.model.Background;
+import com.vaadin.flow.component.charts.model.BackgroundShape;
+import com.vaadin.flow.component.charts.model.ChartType;
+import com.vaadin.flow.component.charts.model.Configuration;
+import com.vaadin.flow.component.charts.model.DataSeries;
+import com.vaadin.flow.component.charts.model.ListSeries;
+import com.vaadin.flow.component.charts.model.Pane;
+import com.vaadin.flow.component.charts.model.PlotOptionsSolidgauge;
+import com.vaadin.flow.component.charts.model.XAxis;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
@@ -14,21 +22,32 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+
 import org.vaadin.artur.backend.Payment;
-import org.vaadin.artur.ui.MainLayout;
 import org.vaadin.artur.ui.components.DataSeriesItemWithRadius;
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.components.ListItem;
 import org.vaadin.artur.ui.layout.size.Bottom;
+import org.vaadin.artur.ui.layout.size.Horizontal;
+import org.vaadin.artur.ui.layout.size.Left;
+import org.vaadin.artur.ui.layout.size.Right;
 import org.vaadin.artur.ui.layout.size.Top;
-import org.vaadin.artur.ui.layout.size.*;
-import org.vaadin.artur.ui.util.*;
+import org.vaadin.artur.ui.layout.size.Uniform;
+import org.vaadin.artur.ui.util.FontSize;
+import org.vaadin.artur.ui.util.IconSize;
+import org.vaadin.artur.ui.util.LumoStyles;
+import org.vaadin.artur.ui.util.TextColor;
+import org.vaadin.artur.ui.util.UIUtils;
+import org.vaadin.artur.ui.util.css.BorderRadius;
+import org.vaadin.artur.ui.util.css.BoxSizing;
+import org.vaadin.artur.ui.util.css.Display;
+import org.vaadin.artur.ui.util.css.FlexDirection;
 import org.vaadin.artur.ui.util.css.Position;
-import org.vaadin.artur.ui.util.css.*;
+import org.vaadin.artur.ui.util.css.Shadow;
 
 @CssImport("./styles/views/statistics.css")
 @PageTitle("Statistics")
-@Route(value = "statistics", layout = MainLayout.class)
+@Route(value = "statistics")
 public class Statistics extends ViewFrame {
 
 	private static final String CLASS_NAME = "statistics";

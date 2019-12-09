@@ -9,6 +9,7 @@ import {
 //@ts-ignore
 import { addSwipeAway } from "./swipe-away";
 import "./brand-expression";
+import "./navi-menu";
 
 @customElement("navi-drawer")
 export class NaviDrawer extends LitElement {
@@ -170,7 +171,7 @@ export class NaviDrawer extends LitElement {
         <div class="navi-drawer__content">
           <brand-expression text="Client-Side-Views"></brand-expression>
           <div class="navi-drawer__scroll-area">
-            <slot></slot>
+            <navi-menu></navi-menu>
           </div>
           <vaadin-button
             id="railButton"

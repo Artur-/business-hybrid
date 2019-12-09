@@ -1,5 +1,8 @@
 package org.vaadin.artur.ui.views;
 
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.DetachEvent;
@@ -15,9 +18,9 @@ import com.vaadin.flow.data.renderer.LocalDateRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.shared.Registration;
+
 import org.vaadin.artur.backend.BankAccount;
 import org.vaadin.artur.backend.DummyData;
-import org.vaadin.artur.ui.MainLayout;
 import org.vaadin.artur.ui.components.Badge;
 import org.vaadin.artur.ui.components.FlexBoxLayout;
 import org.vaadin.artur.ui.components.ListItem;
@@ -25,17 +28,22 @@ import org.vaadin.artur.ui.layout.size.Horizontal;
 import org.vaadin.artur.ui.layout.size.Right;
 import org.vaadin.artur.ui.layout.size.Top;
 import org.vaadin.artur.ui.layout.size.Vertical;
-import org.vaadin.artur.ui.util.*;
-import org.vaadin.artur.ui.util.css.*;
+import org.vaadin.artur.ui.util.FontSize;
+import org.vaadin.artur.ui.util.LineHeight;
+import org.vaadin.artur.ui.util.LumoStyles;
+import org.vaadin.artur.ui.util.TextColor;
+import org.vaadin.artur.ui.util.UIUtils;
+import org.vaadin.artur.ui.util.css.BoxSizing;
+import org.vaadin.artur.ui.util.css.FlexDirection;
+import org.vaadin.artur.ui.util.css.Overflow;
+import org.vaadin.artur.ui.util.css.PointerEvents;
+import org.vaadin.artur.ui.util.css.TextOverflow;
 import org.vaadin.artur.ui.util.css.lumo.BadgeColor;
 import org.vaadin.artur.ui.util.css.lumo.BadgeShape;
 import org.vaadin.artur.ui.util.css.lumo.BadgeSize;
 
-import java.time.format.DateTimeFormatter;
-import java.util.List;
-
 @PageTitle("Accounts")
-@Route(value = "accounts", layout = MainLayout.class)
+@Route(value = "accounts")
 public class Accounts extends ViewFrame {
 
 	public static final int MOBILE_BREAKPOINT = 480;

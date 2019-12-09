@@ -11,6 +11,7 @@ export class NaviItem extends LitElement {
   level?: number;
   @property()
   expanded: boolean = false;
+
   set item(item) {
     this._item = item;
     this.requestUpdate("item"); // This is needed to update the expand/collapse icon
