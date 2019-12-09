@@ -26,9 +26,3 @@ registerStyles(
     ${unsafeCSS(require("./styles/components/grid.css").default)}
   `
 );
-registerStyles(
-  "lumo-badge",
-  css`
-    ${unsafeCSS(require("./styles/styles.css").default)}
-  `
-);

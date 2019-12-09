@@ -1,32 +1,35 @@
 import { LitElement, customElement, html, property, css } from "lit-element";
-
+import { globalCss } from "./global-styles";
 @customElement("brand-expression")
 export class BrandExpression extends LitElement {
   @property()
   text: string = "";
 
   static get styles() {
-    return css`
-      .brand-expression {
-        align-items: center;
-        box-shadow: inset 0 -1px var(--lumo-contrast-10pct);
-        box-sizing: border-box;
-        display: flex;
-        /* Application header height with tabs */
-        height: calc(var(--app-bar-height) + var(--lumo-size-l));
-        justify-content: center;
-        padding: var(--lumo-space-m);
-      }
+    return [
+      globalCss,
+      css`
+        .brand-expression {
+          align-items: center;
+          box-shadow: inset 0 -1px var(--lumo-contrast-10pct);
+          box-sizing: border-box;
+          display: flex;
+          /* Application header height with tabs */
+          height: calc(var(--app-bar-height) + var(--lumo-size-l));
+          justify-content: center;
+          padding: var(--lumo-space-m);
+        }
 
-      .brand-expression__logo {
-        max-height: 100%;
-        max-width: 100%;
-      }
+        .brand-expression__logo {
+          max-height: 100%;
+          max-width: 100%;
+        }
 
-      .brand-expression__title {
-        margin-left: var(--lumo-space-s);
-      }
-    `;
+        .brand-expression__title {
+          margin-left: var(--lumo-space-s);
+        }
+      `
+    ];
   }
   render() {
     return html`

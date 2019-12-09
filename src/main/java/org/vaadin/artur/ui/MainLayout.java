@@ -32,15 +32,6 @@ import org.vaadin.artur.ui.views.personnel.Managers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@CssImport("./styles/lumo/border-radius.css")
-@CssImport("./styles/lumo/icon-size.css")
-@CssImport("./styles/lumo/margin.css")
-@CssImport("./styles/lumo/padding.css")
-@CssImport("./styles/lumo/shadow.css")
-@CssImport("./styles/lumo/spacing.css")
-@CssImport("./styles/lumo/typography.css")
-@CssImport("./styles/misc/box-shadow-borders.css")
-@JsModule("@vaadin/vaadin-lumo-styles/badge")
 public class MainLayout extends FlexBoxLayout
 		implements RouterLayout, AfterNavigationObserver {
 
