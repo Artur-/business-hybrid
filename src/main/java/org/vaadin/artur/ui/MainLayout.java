@@ -53,19 +53,12 @@ public class MainLayout extends FlexBoxLayout
 	private static final Logger log = LoggerFactory.getLogger(MainLayout.class);
 	private static final String CLASS_NAME = "root";
 
-	private Div appHeaderOuter;
-
 	private FlexBoxLayout row;
 	private NaviDrawer naviDrawer;
 	private FlexBoxLayout column;
 
 	private Div appHeaderInner;
 	private FlexBoxLayout viewContainer;
-	private Div appFooterInner;
-
-	private Div appFooterOuter;
-
-	private TabBar tabBar;
 	private AppBar appBar;
 
 	public MainLayout() {
@@ -135,14 +128,6 @@ public class MainLayout extends FlexBoxLayout
 	 * Configure the app's inner and outer headers and footers.
 	 */
 	private void initHeadersAndFooters() {
-		// setAppHeaderOuter();
-		// setAppFooterInner();
-		// setAppFooterOuter();
-
-		// Default inner header setup:
-		// - When using tabbed navigation the view title, user avatar and main menu button will appear in the TabBar.
-		// - When tabbed navigation is turned off they appear in the AppBar.
-
 		appBar = new AppBar("");
 
 		// Tabbed navigation
@@ -150,15 +135,6 @@ public class MainLayout extends FlexBoxLayout
 			setAppHeaderInner(appBar);
 	}
 
-	private void setAppHeaderOuter(Component... components) {
-		if (appHeaderOuter == null) {
-			appHeaderOuter = new Div();
-			appHeaderOuter.addClassName("app-header-outer");
-			getElement().insertChild(0, appHeaderOuter.getElement());
-		}
-		appHeaderOuter.removeAll();
-		appHeaderOuter.add(components);
-	}
 
 	private void setAppHeaderInner(Component... components) {
 		if (appHeaderInner == null) {
@@ -168,28 +144,6 @@ public class MainLayout extends FlexBoxLayout
 		}
 		appHeaderInner.removeAll();
 		appHeaderInner.add(components);
-	}
-
-	private void setAppFooterInner(Component... components) {
-		if (appFooterInner == null) {
-			appFooterInner = new Div();
-			appFooterInner.addClassName("app-footer-inner");
-			column.getElement().insertChild(column.getElement().getChildCount(),
-					appFooterInner.getElement());
-		}
-		appFooterInner.removeAll();
-		appFooterInner.add(components);
-	}
-
-	private void setAppFooterOuter(Component... components) {
-		if (appFooterOuter == null) {
-			appFooterOuter = new Div();
-			appFooterOuter.addClassName("app-footer-outer");
-			getElement().insertChild(getElement().getChildCount(),
-					appFooterOuter.getElement());
-		}
-		appFooterOuter.removeAll();
-		appFooterOuter.add(components);
 	}
 
 
