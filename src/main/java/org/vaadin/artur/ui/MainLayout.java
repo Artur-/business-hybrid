@@ -115,10 +115,7 @@ public class MainLayout extends FlexBoxLayout
 	 * Configure the app's inner and outer headers and footers.
 	 */
 	private void initHeadersAndFooters() {
-		appBar = new AppBar("");
-
-		// Tabbed navigation
-			UIUtils.setTheme(Lumo.DARK, appBar);
+		appBar = new AppBar();
 			setAppHeaderInner(appBar);
 	}
 
@@ -170,7 +167,7 @@ public class MainLayout extends FlexBoxLayout
 	private void afterNavigationWithoutTabs(AfterNavigationEvent e) {
 		NaviItem active = getActiveItem(e);
 		if (active != null) {
-			getAppBar().setTitle(active.getText());
+			// getAppBar().setTitle(active.getText());
 		}
 	}
 

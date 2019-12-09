@@ -55,15 +55,15 @@ public class Payments extends SplitViewFrame {
 	}
 
 	private void initAppBar() {
-		AppBar appBar = MainLayout.get().getAppBar();
-		for (Payment.Status status : Payment.Status.values()) {
-			appBar.addTab(status.getName());
-		}
-		appBar.addTabSelectionListener(e -> {
-			filter();
-			detailsDrawer.hide();
-		});
-		appBar.centerTabs();
+		// AppBar appBar = MainLayout.get().getAppBar();
+		// for (Payment.Status status : Payment.Status.values()) {
+		// 	appBar.addTab(status.getName());
+		// }
+		// appBar.addTabSelectionListener(e -> {
+		// 	filter();
+		// 	detailsDrawer.hide();
+		// });
+		// appBar.centerTabs();
 	}
 
 	private Component createContent() {
@@ -212,9 +212,9 @@ public class Payments extends SplitViewFrame {
 	}
 
 	private void filter() {
-		Tab selectedTab = MainLayout.get().getAppBar().getSelectedTab();
-		if (selectedTab != null)
-			dataProvider.setFilterByValue(Payment::getStatus, Payment.Status
-					.valueOf(selectedTab.getLabel().toUpperCase()));
+		// Tab selectedTab = MainLayout.get().getAppBar().getSelectedTab();
+		// if (selectedTab != null)
+		// 	dataProvider.setFilterByValue(Payment::getStatus, Payment.Status
+		// 			.valueOf(selectedTab.getLabel().toUpperCase()));
 	}
 }

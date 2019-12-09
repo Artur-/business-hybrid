@@ -186,7 +186,7 @@ public class AccountDetails extends ViewFrame implements HasUrlParameter<Long> {
 	protected void onAttach(AttachEvent attachEvent) {
 		super.onAttach(attachEvent);
 
-		initAppBar();
+		// initAppBar();
 		UI.getCurrent().getPage().setTitle(account.getOwner());
 
 		availability.setPrimaryText(UIUtils.formatAmount(account.getAvailability()));
@@ -195,11 +195,11 @@ public class AccountDetails extends ViewFrame implements HasUrlParameter<Long> {
 		updated.setPrimaryText(UIUtils.formatDate(account.getUpdated()));
 	}
 
-	private AppBar initAppBar() {
-		AppBar appBar = MainLayout.get().getAppBar();
-		appBar.setNaviMode(AppBar.NaviMode.CONTEXTUAL);
-		appBar.getContextIcon().addClickListener(e -> UI.getCurrent().navigate(Accounts.class));
-		appBar.setTitle(account.getOwner());
-		return appBar;
-	}
+	// private AppBar initAppBar() {
+		// AppBar appBar = MainLayout.get().getAppBar();
+		// appBar.setNaviMode(AppBar.NaviMode.CONTEXTUAL);
+		// appBar.getContextIcon().addClickListener(e -> UI.getCurrent().navigate(Accounts.class));
+		// appBar.setTitle(account.getOwner());
+		// return appBar;
+	// }
 }
