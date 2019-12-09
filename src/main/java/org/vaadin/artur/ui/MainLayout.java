@@ -48,7 +48,7 @@ import org.slf4j.LoggerFactory;
 @PWA(name = "Client-Side-Views", shortName = "Client-Side-Views", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 public class MainLayout extends FlexBoxLayout
-		implements RouterLayout, PageConfigurator, AfterNavigationObserver {
+		implements RouterLayout, AfterNavigationObserver {
 
 	private static final Logger log = LoggerFactory.getLogger(MainLayout.class);
 	private static final String CLASS_NAME = "root";
@@ -192,14 +192,6 @@ public class MainLayout extends FlexBoxLayout
 		appFooterOuter.add(components);
 	}
 
-	@Override
-	public void configurePage(InitialPageSettings settings) {
-		settings.addMetaTag("apple-mobile-web-app-capable", "yes");
-		settings.addMetaTag("apple-mobile-web-app-status-bar-style", "black");
-
-		settings.addFavIcon("icon", "frontend/images/favicons/favicon.ico",
-				"256x256");
-	}
 
 	@Override
 	public void showRouterLayoutContent(HasElement content) {
