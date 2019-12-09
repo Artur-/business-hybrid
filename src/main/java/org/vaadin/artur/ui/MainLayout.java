@@ -41,8 +41,6 @@ import org.slf4j.LoggerFactory;
 @CssImport("./styles/lumo/typography.css")
 @CssImport("./styles/misc/box-shadow-borders.css")
 @JsModule("@vaadin/vaadin-lumo-styles/badge")
-@PWA(name = "Client-Side-Views", shortName = "Client-Side-Views", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
-@Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 public class MainLayout extends FlexBoxLayout
 		implements RouterLayout, AfterNavigationObserver {
 
