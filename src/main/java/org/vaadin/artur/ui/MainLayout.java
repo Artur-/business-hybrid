@@ -98,16 +98,6 @@ public class MainLayout extends FlexBoxLayout
 	 * Initialise the navigation items.
 	 */
 	private void initNaviItems() {
-		menu.addNaviItem(VaadinIcon.HOME, "Home", Home.class);
-		menu.addNaviItem(VaadinIcon.INSTITUTION, "Accounts", Accounts.class);
-		menu.addNaviItem(VaadinIcon.CREDIT_CARD, "Payments", Payments.class);
-		menu.addNaviItem(VaadinIcon.CHART, "Statistics", Statistics.class);
-
-		NaviItem personnel = menu.addNaviItem(VaadinIcon.USERS, "Personnel",
-				null);
-		menu.addNaviItem(personnel, "Accountants", Accountants.class);
-		menu.addNaviItem(personnel, "Managers", Managers.class);
-
 		getNaviDrawer().add(menu);
 	}
 
@@ -152,23 +142,6 @@ public class MainLayout extends FlexBoxLayout
 
 	@Override
 	public void afterNavigation(AfterNavigationEvent event) {
-		afterNavigationWithoutTabs(event);
-	}
-
-	private NaviItem getActiveItem(AfterNavigationEvent e) {
-		for (NaviItem item : menu.getNaviItems()) {
-			if (item.isHighlighted(e)) {
-				return item;
-			}
-		}
-		return null;
-	}
-
-	private void afterNavigationWithoutTabs(AfterNavigationEvent e) {
-		NaviItem active = getActiveItem(e);
-		if (active != null) {
-			// getAppBar().setTitle(active.getText());
-		}
 	}
 
 }
