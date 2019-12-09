@@ -32,9 +32,6 @@ import org.vaadin.artur.ui.views.personnel.Managers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@CssImport(value = "./styles/components/charts.css", themeFor = "vaadin-chart", include = "vaadin-chart-default-theme")
-@CssImport(value = "./styles/components/floating-action-button.css", themeFor = "vaadin-button")
-@CssImport(value = "./styles/components/grid.css", themeFor = "vaadin-grid")
 @CssImport("./styles/lumo/border-radius.css")
 @CssImport("./styles/lumo/icon-size.css")
 @CssImport("./styles/lumo/margin.css")
@@ -43,7 +40,6 @@ import org.slf4j.LoggerFactory;
 @CssImport("./styles/lumo/spacing.css")
 @CssImport("./styles/lumo/typography.css")
 @CssImport("./styles/misc/box-shadow-borders.css")
-@CssImport(value = "./styles/styles.css", include = "lumo-badge")
 @JsModule("@vaadin/vaadin-lumo-styles/badge")
 @PWA(name = "Client-Side-Views", shortName = "Client-Side-Views", iconPath = "images/logo-18.png", backgroundColor = "#233348", themeColor = "#233348")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")

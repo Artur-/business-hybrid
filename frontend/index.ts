@@ -1,5 +1,6 @@
 import { Flow } from "@vaadin/flow-frontend/Flow";
 import { Router } from "@vaadin/router";
+import "./global-component-styles";
 
 const { serverSideRoutes } = new Flow({
   imports: () => import("../target/frontend/generated-flow-imports")
