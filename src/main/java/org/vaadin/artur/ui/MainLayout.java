@@ -60,6 +60,7 @@ public class MainLayout extends FlexBoxLayout
 	private Div appHeaderInner;
 	private FlexBoxLayout viewContainer;
 	private AppBar appBar;
+	private NaviMenu menu = new NaviMenu();
 
 	public MainLayout() {
 		VaadinSession.getCurrent()
@@ -112,7 +113,6 @@ public class MainLayout extends FlexBoxLayout
 	 * Initialise the navigation items.
 	 */
 	private void initNaviItems() {
-		NaviMenu menu = naviDrawer.getMenu();
 		menu.addNaviItem(VaadinIcon.HOME, "Home", Home.class);
 		menu.addNaviItem(VaadinIcon.INSTITUTION, "Accounts", Accounts.class);
 		menu.addNaviItem(VaadinIcon.CREDIT_CARD, "Payments", Payments.class);
@@ -122,6 +122,8 @@ public class MainLayout extends FlexBoxLayout
 				null);
 		menu.addNaviItem(personnel, "Accountants", Accountants.class);
 		menu.addNaviItem(personnel, "Managers", Managers.class);
+
+		getNaviDrawer().add(menu);
 	}
 
 	/**
@@ -153,7 +155,7 @@ public class MainLayout extends FlexBoxLayout
 	}
 
 	public NaviDrawer getNaviDrawer() {
-		return naviDrawer;
+        return naviDrawer;
 	}
 
 	public static MainLayout get() {
@@ -172,7 +174,7 @@ public class MainLayout extends FlexBoxLayout
 	}
 
 	private NaviItem getActiveItem(AfterNavigationEvent e) {
-		for (NaviItem item : naviDrawer.getMenu().getNaviItems()) {
+		for (NaviItem item : menu.getNaviItems()) {
 			if (item.isHighlighted(e)) {
 				return item;
 			}

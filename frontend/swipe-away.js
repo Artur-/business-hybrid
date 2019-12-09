@@ -31,16 +31,11 @@ const trackElement = function(trackElement, menuElement, callback) {
   });
 };
 
-window.addSwipeAway = function(
+export const addSwipeAway = function(
   menuElement,
-  callbackContainer,
-  callbackMethod,
+  callback,
   additionalElement
 ) {
-  trackElement(menuElement, menuElement, function(details) {
-    callbackContainer.$server[callbackMethod](details);
-  });
-  trackElement(additionalElement, menuElement, function(details) {
-    callbackContainer.$server[callbackMethod](details);
-  });
+  trackElement(menuElement, menuElement, callback);
+  trackElement(additionalElement, menuElement, callback);
 };
