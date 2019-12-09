@@ -10,6 +10,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
 import org.vaadin.artur.ui.util.UIUtils;
@@ -17,6 +18,7 @@ import elemental.json.JsonObject;
 
 @CssImport("./styles/components/navi-drawer.css")
 @JsModule("./swipe-away.js")
+@JsModule("./brand-expression.ts")
 public class NaviDrawer extends Div
 		implements AfterNavigationObserver {
 
@@ -77,7 +79,9 @@ public class NaviDrawer extends Div
 	}
 
 	private void initHeader() {
-		mainContent.add(new BrandExpression("Client-Side-Views"));
+		Element brand = new Element("brand-expression");
+		brand.setAttribute("text", "Client-Side-Views");
+		mainContent.getElement().appendChild(brand);
 	}
 
 	private void initSearch() {
