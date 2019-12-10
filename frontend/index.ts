@@ -9,11 +9,19 @@ const { serverSideRoutes } = new Flow({
   imports: () => import("../target/frontend/generated-flow-imports")
 });
 
+const clientView: Router.RouteWithAction = {
+  path: "statistics",
+  action: async () => {
+    await import("./statistics-view");
+    return document.createElement("statistics-view");
+  }
+};
+
 const routes = [
   {
     path: "",
     component: "main-layout",
-    children: [...serverSideRoutes]
+    children: [clientView, ...serverSideRoutes]
   }
   // fallback to server-side Flow routes if no client-side routes match
 ];

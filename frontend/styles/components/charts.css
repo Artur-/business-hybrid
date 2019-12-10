@@ -1,9 +1,9 @@
 .highcharts-axis-title {
-  fill: var(--lumo-secondary-text-color);
+  fill: var(--lumo-secondary-text-color) !important;;
 }
 
 .highcharts-axis-labels {
-  fill: var(--lumo-tertiary-text-color);
+  fill: var(--lumo-tertiary-text-color) !important;;
 }
 
 .highcharts-axis-line,
@@ -12,7 +12,7 @@
 }
 
 .highcharts-area {
-  fill-opacity: 0.5;
+  fill-opacity: 0.5 !important;
 }
 
 :host(.pending) .highcharts-color-0,
@@ -36,18 +36,18 @@
 }
 
 .highcharts-background {
-  fill: transparent;
+  fill: transparent !important;;
 }
 
 .highcharts-container {
-  font-family: inherit;
+  font-family: inherit !important;
 }
 
 .highcharts-data-label {
-  font-size: inherit;
-  font-weight: inherit;
+  font-size: inherit !important;;
+  font-weight: inherit !important;;
 }
 
 .highcharts-yaxis-grid  {
-  display: none;
+  display: none !important;;
 }

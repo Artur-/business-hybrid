@@ -14,6 +14,7 @@ globalStyles += require("./styles/lumo/padding.css").default;
 globalStyles += require("./styles/lumo/shadow.css").default;
 globalStyles += require("./styles/lumo/spacing.css").default;
 globalStyles += require("./styles/misc/box-shadow-borders.css").default;
+globalStyles += require("./styles/components/list-item.css").default;
 
 const globalCss = [
   css`
