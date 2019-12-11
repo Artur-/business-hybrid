@@ -213,6 +213,9 @@ export class NaviMenu extends LitElement {
 
   setItemHighlight(item: MenuItem, location: Router.Location) {
     let path = location.pathname;
+    if (path.startsWith(location.baseUrl)) {
+      path = path.substring(location.baseUrl.length);
+    }
     if (path.startsWith("/")) {
       path = path.substring(1);
     }
