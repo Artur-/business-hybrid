@@ -7,7 +7,6 @@ import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import org.vaadin.artur.ui.util.UIUtils;
 import org.vaadin.artur.ui.util.css.Overflow;
-import org.vaadin.artur.ui.views.Home;
 
 /**
  * NaviTabs supports tabs that can be closed, and that can navigate to a
@@ -93,7 +92,7 @@ public class NaviTabs extends Tabs {
 				if (getTabCount() > 0) {
 					setSelectedIndex(getTabCount() - 1);
 				} else {
-					UI.getCurrent().navigate(Home.class);
+					UI.getCurrent().navigate("");
 				}
 			}
 		}
