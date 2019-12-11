@@ -1,6 +1,7 @@
 import { LitElement, customElement, css, html } from "lit-element";
 import "./navi-drawer";
 import "./app-bar";
+import "github-corner";
 
 @customElement("main-layout")
 export class MainLayout extends LitElement {
@@ -18,11 +19,17 @@ export class MainLayout extends LitElement {
         width: 100%;
         overflow-y: auto;
       }
+      github-corner svg {
+        z-index: 10;
+      }
     `;
   }
 
   render() {
     return html`
+      <github-corner position="left"
+        ><a href="https://github.com/Artur-/business-hybrid"></a
+      ></github-corner>
       <div
         class="root"
         style="flex-direction: column; display: flex; width: 100%; height: 100%;"

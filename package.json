@@ -7,6 +7,7 @@
     "@vaadin/flow-frontend": "./target/flow-frontend",
     "@vaadin/router": "^1.5.2",
     "@webcomponents/webcomponentsjs": "^2.2.10",
+    "github-corner": "^2.0.3",
     "lit-element": "^2.2.1"
   },
   "devDependencies": {
