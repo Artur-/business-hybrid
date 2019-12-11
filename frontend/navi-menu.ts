@@ -14,7 +14,7 @@ export interface MenuItem {
 
 @customElement("navi-menu")
 export class NaviMenu extends LitElement {
-  @property()
+  @property({ type: Array })
   items: MenuItem[] = [
     {
       path: "",
