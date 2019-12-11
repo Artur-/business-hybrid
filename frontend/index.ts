@@ -26,5 +26,5 @@ const routes = [
   // fallback to server-side Flow routes if no client-side routes match
 ];
 
-const router = new Router(document.body);
+export const router = new Router(document.body);
 router.setRoutes(routes);

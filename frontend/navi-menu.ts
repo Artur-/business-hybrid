@@ -2,7 +2,8 @@ import { css, customElement, html, LitElement, property } from "lit-element";
 import { globalCss } from "./global-styles";
 import "./navi-item";
 import "@vaadin/vaadin-icons";
-import "@vaadin/vaadin-button"
+import "@vaadin/vaadin-button";
+import { router } from "./index";
 
 export interface MenuItem {
   path?: string;
@@ -10,6 +11,7 @@ export interface MenuItem {
   text: string;
   children?: MenuItem[];
   expanded?: boolean;
+  highlight?: boolean;
 }
 
 @customElement("navi-menu")
@@ -189,5 +191,32 @@ export class NaviMenu extends LitElement {
   expand(item: MenuItem) {
     item.expanded = !item.expanded;
     this.requestUpdate("items");
+  }
+  connectedCallback() {
+    super.connectedCallback();
+    this.updateHighlight();
+    window.addEventListener("vaadin-router-location-changed", () => {
+      this.updateHighlight();
+    });
+  }
+  updateHighlight() {
+    const location = router.location;
+
+    this.items.forEach(item => {
+      this.setItemHighlight(item, location);
+      if (item.children) {
+        item.children.forEach(child => this.setItemHighlight(child, location));
+      }
+    });
+    this.requestUpdate("items");
+  }
+
+  setItemHighlight(item: MenuItem, location: Router.Location) {
+    let path = location.pathname;
+    if (path.startsWith("/")) {
+      path = path.substring(1);
+    }
+
+    item.highlight = item.path == path;
   }
 }

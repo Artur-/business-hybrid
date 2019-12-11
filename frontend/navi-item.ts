@@ -26,7 +26,7 @@ export class NaviItem extends LitElement {
   render() {
     return html`
       <div class="navi-item" level="${ifDefined(this.level)}">
-        <a class="navi-item__link" href="${ifDefined(this.item.path)}">
+        <a class="navi-item__link" href="${ifDefined(this.item.path)}" ?highlight="${this.item.highlight}">
           ${this.item.icon
             ? html`
                 <iron-icon icon="${this.item.icon}"></iron-icon>
