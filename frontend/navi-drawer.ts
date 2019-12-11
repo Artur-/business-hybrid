@@ -49,6 +49,7 @@ export class NaviDrawer extends LitElement {
         top: 0;
         width: 100%;
         will-change: opacity;
+        z-index: 1;
       }
 
       /* Content */
@@ -185,6 +186,15 @@ export class NaviDrawer extends LitElement {
         </div>
       </div>
     `;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener("toggle-menu", () => this.toggle());
+    window.addEventListener("vaadin-router-location-changed", () => {
+      // Close menu when navigating on mobile
+      if (this.open) this._close();
+    });
   }
 
   firstUpdated(_changedProperties: Map<string | number | symbol, unknown>) {

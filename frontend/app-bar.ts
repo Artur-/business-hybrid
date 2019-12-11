@@ -121,15 +121,12 @@ export class AppBar extends LitElement {
             tabindex="0"
             role="button"
             style="line-height: 1;"
+            @click="${() => this.openMenu()}"
             ><iron-icon
               icon="vaadin:menu"
               slot="prefix"
             ></iron-icon></vaadin-button
-          ><vaadin-button
-            hidden
-            tabindex="0"
-            role="button"
-          ></vaadin-button>
+          ><vaadin-button hidden tabindex="0" role="button"></vaadin-button>
           <h4 class="app-bar__title">Home</h4>
           <vaadin-text-field hidden tabindex="0"></vaadin-text-field>
           <div hidden></div>
@@ -149,13 +146,14 @@ export class AppBar extends LitElement {
             orientation="horizontal"
             role="tablist"
           ></vaadin-tabs
-          ><vaadin-button
-            hidden
-            tabindex="0"
-            role="button"
-          ></vaadin-button>
+          ><vaadin-button hidden tabindex="0" role="button"></vaadin-button>
         </div>
       </div>
     `;
+  }
+  openMenu() {
+    this.dispatchEvent(
+      new CustomEvent("toggle-menu", { bubbles: true, composed: true })
+    );
   }
 }
