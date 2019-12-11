@@ -11,9 +11,9 @@ const { serverSideRoutes } = new Flow({
 
 const clientView: Router.RouteWithAction = {
   path: "statistics",
-  action: async () => {
+  action: async (_context, _commands) => {
     await import("./statistics-view");
-    return document.createElement("statistics-view");
+    return _commands.component("statistics-view");
   }
 };
 
