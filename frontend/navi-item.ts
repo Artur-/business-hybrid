@@ -7,9 +7,9 @@ import { MenuItem } from "./navi-menu";
 export class NaviItem extends LitElement {
   @property()
   _item: MenuItem = { text: "" };
-  @property()
+  @property({ type: Number })
   level?: number;
-  @property()
+  @property({ type: Boolean })
   expanded: boolean = false;
 
   set item(item) {
@@ -35,7 +35,7 @@ export class NaviItem extends LitElement {
           <span>${this.item.text}</span></a
         >
         <vaadin-button
-          hidden="${ifDefined(this.item.path)}"
+          ?hidden="${this.item.path !== undefined}"
           theme="small icon tertiary"
           aria-label="${this.item.expanded ? "Collapse" : "Expand"} ${this.item
             .text}"

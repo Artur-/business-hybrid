@@ -126,13 +126,13 @@ export class AppBar extends LitElement {
               slot="prefix"
             ></iron-icon></vaadin-button
           ><vaadin-button
-            hidden="true"
+            hidden
             tabindex="0"
             role="button"
           ></vaadin-button>
           <h4 class="app-bar__title">Home</h4>
-          <vaadin-text-field hidden="true" tabindex="0"></vaadin-text-field>
-          <div hidden="true"></div>
+          <vaadin-text-field hidden tabindex="0"></vaadin-text-field>
+          <div hidden></div>
           <img
             class="app-bar__avatar"
             src="images/avatar.png"
@@ -144,13 +144,13 @@ export class AppBar extends LitElement {
           style="display: flex; align-items: center;"
         >
           <vaadin-tabs
-            hidden="true"
+            hidden
             selected="0"
             orientation="horizontal"
             role="tablist"
           ></vaadin-tabs
           ><vaadin-button
-            hidden="true"
+            hidden
             tabindex="0"
             role="button"
           ></vaadin-button>

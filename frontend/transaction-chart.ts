@@ -3,7 +3,7 @@ import { globalCss } from "./global-styles";
 
 @customElement("transaction-chart")
 export class TransactionChart extends LitElement {
-  @property()
+  @property({ type: Array })
   values?: number[];
 
   static get styles() {

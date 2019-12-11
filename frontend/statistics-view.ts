@@ -9,15 +9,15 @@ import * as StatisticsEndpoint from "./generated/StatisticsEndpoint";
 
 @customElement("statistics-view")
 export class StatisticsView extends LitElement {
-  @property()
+  @property({ type: Number })
   pending?: number;
-  @property()
+  @property({ type: Number })
   submitted?: number;
-  @property()
+  @property({ type: Number })
   confirmed?: number;
-  @property()
+  @property({ type: Number })
   failed?: number;
-  @property()
+  @property({ type: Array })
   transactionValues?: number[];
 
   static get styles() {
@@ -133,7 +133,7 @@ export class StatisticsView extends LitElement {
           </div>
           <div class="transactionChartContainer">
             <transaction-chart
-              .values=${ifDefined(this.transactionValues)}
+              .values=${this.transactionValues}
             ></transaction-chart>
           </div>
         </div>
